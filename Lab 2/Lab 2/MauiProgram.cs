@@ -1,17 +1,25 @@
-﻿namespace Lab_2
-{
-    public partial class MainPage : ContentPage
-    {
-        public MainPage()
-        {
-            InitializeComponent();
-        }
+﻿using Microsoft.Extensions.Logging;
 
-        // 当爱心按钮被点击时，这个方法会被调用
-        private void OnFavoriteClicked(object sender, EventArgs e)
+namespace Lab_2
+{
+    public static class MauiProgram
+    {
+        public static MauiApp CreateMauiApp()
         {
-            // 这里我们弹出一个提示框来证明按钮被点击了
-            DisplayAlert("Favorite", "You have added this pet to your favorites!", "OK");
+            var builder = MauiApp.CreateBuilder();
+            builder
+                .UseMauiApp<App>()
+                .ConfigureFonts(fonts =>
+                {
+                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                });
+
+#if DEBUG
+            builder.Logging.AddDebug();
+#endif
+
+            return builder.Build();
         }
     }
 }
