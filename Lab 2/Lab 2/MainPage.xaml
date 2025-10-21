@@ -12,49 +12,53 @@
                HorizontalOptions="Center" />
 
         <ScrollView Grid.Row="1">
-            <VerticalStackLayout Spacing="10">
+            <VerticalStackLayout Spacing="0">
 
-                <Image Source="image10.jpg" 
-                       Aspect="AspectFill" 
-                       HeightRequest="300" />
+                <Image Source="image10.jpg" Aspect="AspectFill" HeightRequest="300" />
 
-                <Frame CornerRadius="20" 
-                       Padding="20" 
-                       Margin="15,-40,15,0" 
-                       BackgroundColor="#FEF9E8" 
-                       HasShadow="True">
-                    <VerticalStackLayout Spacing="15">
-                        <Grid ColumnDefinitions="*,Auto,Auto" 
-                              RowDefinitions="Auto">
-                            <Label Text="Robin Hood" 
-                                   FontSize="24" 
-                                   FontAttributes="Bold" 
-                                   TextColor="Black"/>
-                            <Label Grid.Column="1" 
-                                   Text="1 year old" 
-                                   VerticalOptions="Center"/>
-                            <Image Grid.Column="2" 
-                                   Source="male_icon.png" 
-                                   HeightRequest="20" 
-                                   WidthRequest="20" 
-                                   VerticalOptions="Center"/>
-                        </Grid>
+                <Border StrokeThickness="0"
+                        Margin="0,-40,0,0"
+                        BackgroundColor="White">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="30,30,0,0"/>
+                    </Border.StrokeShape>
 
-                        <HorizontalStackLayout Spacing="10">
-                            <Image Source="location_icon.png" HeightRequest="16" WidthRequest="16" VerticalOptions="Start"/>
-                            <Label Text="3B,Lorong 88, Taman Rantau Panjang, 96000 Sibu, Sarawak" TextColor="Gray"/>
-                        </HorizontalStackLayout>
+                    <VerticalStackLayout Spacing="15" Padding="20,20,20,30">
 
-                        <BoxView HeightRequest="1" Color="LightGray" />
+                        <Border BackgroundColor="#FEF9E8" Padding="15" StrokeThickness="0">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="20"/>
+                            </Border.StrokeShape>
+                            <VerticalStackLayout Spacing="15">
+                                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" RowSpacing="5">
+                                    <Label Grid.Row="0" Grid.Column="0" Text="Robin Hood" FontSize="24" FontAttributes="Bold" TextColor="Black"/>
+                                    <Image Grid.Row="0" Grid.Column="1" Source="symbolmale.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center"/>
+
+                                    <Label Grid.Row="1" Grid.Column="0" Text="Pug" TextColor="Gray" VerticalOptions="Center"/>
+                                    <HorizontalStackLayout Grid.Row="1" Grid.Column="1" Spacing="5" VerticalOptions="Center">
+                                        <Image Source="clock.png" HeightRequest="16" WidthRequest="16"/>
+                                        <Label Text="1 year old" TextColor="Gray"/>
+                                    </HorizontalStackLayout>
+                                </Grid>
+
+                                <Grid ColumnDefinitions="Auto, *" ColumnSpacing="10" VerticalOptions="Center">
+                                    <Image Grid.Column="0" Source="location.png" HeightRequest="16" WidthRequest="16" VerticalOptions="Start" Margin="0,4,0,0"/>
+                                    <Label Grid.Column="1" Text="3B,Lorong 88, Taman Rantau Panjang, 96000 Sibu, Sarawak" TextColor="Gray"/>
+                                </Grid>
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <BoxView HeightRequest="1" Color="#F0EAD6" />
 
                         <Grid ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center">
-                            <Frame CornerRadius="25" HeightRequest="50" WidthRequest="50" Padding="0" IsClippedToBounds="True">
+                            <Border HeightRequest="50" WidthRequest="50" StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="25"/>
+                                </Border.StrokeShape>
                                 <Image Source="owner.jpg" Aspect="AspectFill"/>
-                            </Frame>
+                            </Border>
                             <VerticalStackLayout Grid.Column="1" Padding="10,0,0,0">
-                                <Label Text="XiaoMin" 
-                                       FontAttributes="Bold" 
-                                       TextColor="Black"/>
+                                <Label Text="XiaoMin" FontAttributes="Bold" TextColor="Black"/>
                                 <Label Text="Owner" TextColor="Gray"/>
                             </VerticalStackLayout>
                             <Label Grid.Column="2" Text="1.11.2024" TextColor="Gray"/>
@@ -63,11 +67,11 @@
                         <Label Text="Hi! Robin the Pug is simply a tiny tornado of fur, wrinkles, and endless charm!" TextColor="Gray"/>
 
                         <Grid ColumnDefinitions="Auto,*" Margin="0,10,0,0">
-                            <Button Text="♡" BackgroundColor="White" TextColor="Gray" CornerRadius="15" BorderColor="LightGray" BorderWidth="1" WidthRequest="60"/>
-                            <Button Grid.Column="1" Text="Adoption" BackgroundColor="#FFC107" TextColor="White" CornerRadius="15" Margin="10,0,0,0"/>
+                            <Button Text="♡" BackgroundColor="White" TextColor="#BDBDBD" FontSize="20" CornerRadius="25" BorderColor="#EEEEEE" BorderWidth="1" WidthRequest="60" HeightRequest="50" Clicked="OnFavoriteClicked"/>
+                            <Button Grid.Column="1" Text="Adoption" BackgroundColor="#FFCA28" TextColor="White" CornerRadius="25" Margin="10,0,0,0" HeightRequest="50" FontAttributes="Bold"/>
                         </Grid>
                     </VerticalStackLayout>
-                </Frame>
+                </Border>
             </VerticalStackLayout>
         </ScrollView>
     </Grid>

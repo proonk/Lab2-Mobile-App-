@@ -6,5 +6,11 @@
         {
             InitializeComponent();
         }
+
+        private void OnFavoriteClicked(object sender, EventArgs e)
+        {
+         
+            DisplayAlert("Favorite", "You have added this pet to your favorites!", "OK");
+        }
     }
 }
